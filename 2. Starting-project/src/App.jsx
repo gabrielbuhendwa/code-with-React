@@ -22,12 +22,12 @@ function Header (){
   );
 }
 
-function CoreConcept() {
+function CoreConcept(props) {
   return (
     <li>
-      <img src="" alt=""/>
-      <h3>TITLE</h3>
-      <p>DESCRIPTION</p>
+      <img src="{propos.image}" alt="{props.title}"/>
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
     </li>
   );
 }
@@ -44,8 +44,8 @@ function App() {
             <CoreConcept 
               title="Components" 
               description="let's build our first Block."
-              img={ComponentImg}
-              />
+              image={ComponentImg}
+            />
             <CoreConcept/>
             <CoreConcept/>
             <CoreConcept/>
