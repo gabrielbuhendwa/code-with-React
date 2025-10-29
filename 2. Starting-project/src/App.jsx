@@ -1,4 +1,5 @@
-//here bellow we enter the code that makes up our App component
+import reactImg from './assets/react-core-concepts.png';
+
 const reactDescriptions = ['Fundamental','Crucial','Core'];
 
 function genRandomInt(max){
@@ -10,13 +11,23 @@ function Header (){
   const description = reactDescriptions[genRandomInt(2)];
   return(
     <header>
-        <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
+        <img src={reactImg} alt="Stylized atom" />
         <h1>React Essentials</h1>
         <p>
           {description} React concepts you will need for almost any app you are
           going to build!
         </p>
       </header>
+  );
+}
+
+function CoreConcept() {
+  return (
+    <li>
+      <img src="" alt=""/>
+      <h3>TITLE</h3>
+      <p>DESCRIPTION</p>
+    </li>
   );
 }
 
