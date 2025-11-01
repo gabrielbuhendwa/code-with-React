@@ -1,11 +1,26 @@
-export default function Player({ name, symbol, onEdit }) {
+import { useState } from "react";
+
+export default function Player({ name, symbol }) {
+  const [ isEditing, setIsEditing] = useState(false);
+
+  function handleEditClick(){
+    setIsEditing(true);
+  }
+
+  let playerName = <span className="player-name">{name}</span>
+
+  if (isEditing){
+    playerName = <input type="text" required value={name}/>;
+  }
+
   return (
+
     <li>
       <span className="player">
-        <span className="player-name">{name}</span>
+        {playerName}
         <span className="player-symbol">{symbol}</span>
       </span>
-      <button onClick={onEdit}>Edit</button>
+      <button onClick={handleEditClick}>{isEditing ? 'Save' : 'Edit'}</button>
     </li>
   );
 }
